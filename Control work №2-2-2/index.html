@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Делегирование событий</title>
+</head>
+<body>
+    <div id="buttons">
+        <button>red</button>
+        <button>green</button>
+        <button>blue</button>
+        <button>yellow</button>
+        <button>purple</button>
+    </div>
+
+    <script>
+        const buttons = document.getElementById('buttons');
+
+        buttons.addEventListener('click', function(event) {
+            if (event.target.tagName === 'BUTTON') {
+                document.body.style.backgroundColor = event.target.textContent;
+            }
+        });
+    </script>
+</body>
+</html>
